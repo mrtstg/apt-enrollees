@@ -25,13 +25,9 @@ spec:
     - name: REDIS_HOST
       value: apt-stud
     name: server
-    resources:
-      limits:
-        cpu: 300m
-        memory: 100Mi
     ports:
     - containerPort: 30000
-      hostPort: 30400
+      hostPort: 80
     securityContext:
       capabilities:
         drop:
@@ -44,6 +40,6 @@ spec:
 
   volumes:
   - hostPath:
-      path: /root/docker/apt-studs
+      path: /path/to/project
       type: Directory
     name: mount
