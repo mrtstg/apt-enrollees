@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: apt-stud
+  name: apt-stud
+spec:
+  hostname: apt-stud
+  containers:
+  - image: docker.io/library/redis
+    name: redis
+    securityContext:
+      capabilities:
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+  
+  - image: localhost/apt-studs:latest
+    env:
+    - name: LAUNCH_COMMAND
+      value: python main.py
+    - name: PORT
+      value: 30000
+    - name: REDIS_HOST
+      value: apt-stud
+    name: server
+    resources:
+      limits:
+        cpu: 300m
+        memory: 100Mi
+    ports:
+    - containerPort: 30000
+      hostPort: 30400
+    securityContext:
+      capabilities:
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+    volumeMounts:
+    - mountPath: /usr/src/app
+      name: mount
+
+  volumes:
+  - hostPath:
+      path: /root/docker/apt-studs
+      type: Directory
+    name: mount
