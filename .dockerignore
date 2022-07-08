@@ -1,0 +1,5 @@
+mypy.ini
+__pycache__
+*.pyc
+*.yaml
+node_modules
