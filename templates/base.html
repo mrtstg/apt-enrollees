@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href="{{ root_path + static_path + 'styles.css' }}">
+    </head>
+    <body class="dark:bg-slate-800 flex flex-col min-h-screen">
+        {% block body %}
+
+        {% endblock %}
+    </body>
+    {% block afterbody %}
+    {% endblock %}
+</html>

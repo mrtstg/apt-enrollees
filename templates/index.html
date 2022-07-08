@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Списки поступающих | mrtstg {% endblock %}
+
+{% block body %}
+
+<section class="box md:mt-3">
+    <h1 class="text-xl md:text-4xl"> Списки поступающих 
+        <a href="https://almetpt.ru" class="underline decoration-cyan-500 hover:decoration-cyan-600 hover:transition-all font-semibold"> АПТ </a>
+    </h1>
+    <h2 class="text-lg md:text-2xl"> с сортировкой по среднему баллу</h2>    
+</section>
+
+<section class="h-auto my-5 flex-grow" id="app">
+</section>
+
+<footer class="bg-gray-200 text-slate-500 dark:text-gray-50 dark:bg-slate-700">
+    <h1 class="text-lg text-center p-3"> 
+        From 
+        <a href="https://github.com/mrtstg" class="hover:underline text-cyan-500 dark:text-blue-300">
+            Ilya Kotov
+        </a> with 💜 
+    </h1>
+</footer>
+
+{% endblock %}
+
+{% block afterbody %}
+    <script src="{{ root_path + static_path + 'main.bundle.js' }}"></script>
+{% endblock %}
