@@ -21,7 +21,7 @@ class APTSiteParser:
     def __repr__(self) -> str:
         return 'APTParserObject'
     
-    #@redis_cache(86400)
+    @redis_cache(86400)
     async def get_groups(self) -> List[dict]:
         groups = {}
 
@@ -62,7 +62,7 @@ class APTSiteParser:
             'students': students, 'group_info': None
         }
 
-    #@redis_cache(600)
+    @redis_cache(600)
     async def get_students(self, group_id: int) -> dict:
         async with aiohttp.ClientSession(headers=self.headers) as client:
             async with client.get(
