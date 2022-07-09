@@ -1,6 +1,7 @@
 # apt-enrollees
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/) [![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/) [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
 Приложение для удобного просмотра абитуриентов с сайта [Альметьевского политехнического техникума](https://almetpt.ru).
 
 [Опробовать приложение](https://almetpt.mrtstg.ru)
@@ -16,13 +17,21 @@
 ## Структура проекта
 
 .
+
 ├── configs - директория с конфигурацией сервера
+
 ├── deployment - директория, содержащая Dockerfile и прочие файлы для развертывания
+
 ├── dist - директория с собранными webpack'ом файлами
+
 ├── modules - директория для подмодулей сервера
+
 ├── src - исходники для сборки
+
 │   ├── css
+
 │   └── js
+
 └── template - папка с шаблонами HTML
 
 ## Конфигурация сервера
