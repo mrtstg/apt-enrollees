@@ -57,7 +57,7 @@
         }
     }
 
-    let selected_group = undefined;
+    let selected_group = 'all';
     let loading_groups = false;
     let promise = getGroups();
 </script>
